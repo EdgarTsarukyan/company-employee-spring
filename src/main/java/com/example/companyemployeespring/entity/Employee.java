@@ -1,5 +1,6 @@
 package com.example.companyemployeespring.entity;
 
+import com.sun.xml.bind.v2.schemagen.episode.Package;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,12 +22,16 @@ public class Employee {
     private int id;
     private String name;
     private String surname;
-    private String email;
     private int phoneNumber;
     private int salary;
     private String position;
+    private String email;
+    private String password;
+    @Enumerated(value = EnumType.STRING)
+    private UserType userType;
 
     @ManyToOne
+
     private Company company;
 
 

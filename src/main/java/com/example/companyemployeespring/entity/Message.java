@@ -11,17 +11,17 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "message")
 @Entity
-@Table(name = "company")
-public class Company {
+public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private int size;
-    private String address;
-    private String email;
-
+    private String text;
+    @ManyToOne
+    private Employee from;
+    @ManyToOne
+    private Employee to;
 
 }

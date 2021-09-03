@@ -6,8 +6,9 @@
 </head>
 <body>
 <H1>It is employees page</H1><br>
-<a href="/">Main page</a>   |   <a href = "/chooseCompany">Add Employee</a><br><br>
-
+<a href="/messages">Messages</a>
+<a href="/">Main page</a> | <a href="/chooseCompany">Add Employee</a><br><br>
+<a href="/logout">Logout</a><br>
 <h2>Employees</h2><br>
 <table border="1">
     <tr>
@@ -19,6 +20,8 @@
         <th>salary</th>
         <th>position</th>
         <th>company name</th>
+        <th>messages</th>
+        <th>delete</th>
     </tr>
     <tr th:each="empl : ${employees}">
 
@@ -29,7 +32,10 @@
         <td th:text="${empl.getPhoneNumber()}"></td>
         <td th:text="${empl.getSalary()}"></td>
         <td th:text="${empl.getPosition()}"></td>
-        <td th:text="${empl.company.getName()}"></td>
+        <td th:text="${empl.getCompany().getName()}"></td>
+
+        <td><a th:href="@{/sendMessage(id=${empl.getId()})}">Send Message</a></td>
+
         <td><a th:href="@{/deleteEmployee(id=${empl.getId()})}">Delete</a></td>
 
 

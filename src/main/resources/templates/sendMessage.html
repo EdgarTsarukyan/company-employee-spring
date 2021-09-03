@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+page
+<h1>Send Message</h1><br>
+<a href="/">Main page</a><br>
+<span th:text="${toId.getName()}"></span>
+sended messages:
+<div >
+
+    <p th:each="myMessage:${myMessages}"  th:text="${myMessage.getText()}" >
+
+
+    </p>
+</div>
+<form action="/sendMessage" method="post">
+<input type="hidden" th:value="${toId.getId()}" name="toId">
+    <input type="text" name="message">
+    <button type="submit">send message</button>
+
+</form>
+
+</body>
+</html>

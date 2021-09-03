@@ -7,7 +7,8 @@
 <body>
 
 <H1>It is company page</H1><br>
-<a href="/">Main page</a>  |  <a href = "/addCompany">Add Company</a><br><br>
+<a href="/">Main page</a>  |  <a href = "/addCompany">Add Company</a><br>
+<a href="/logout">Logout</a><br>
 
 <h2>Company</h2><br>
 <table border="1">
@@ -16,6 +17,8 @@
         <th>name</th>
         <th>size</th>
         <th>address</th>
+        <th>email</th>
+
     </tr>
     <tr th:each="comp : ${company}">
 
@@ -23,6 +26,9 @@
         <td th:text="${comp.getName()}"></td>
         <td th:text="${comp.getSize()}"></td>
         <td th:text="${comp.getAddress()}"></td>
+        <td th:text="${comp.getEmail()}"></td>
+
+
         <td><a th:href="@{/deleteCompany(id=${comp.getId()})}">Delete</a></td>
 
 

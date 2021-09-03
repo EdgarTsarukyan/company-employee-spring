@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>messages</title>
+</head>
+<body>
+<h1>this is messages</h1>
+<h2>Messages</h2><br>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>text</th>
+        <th>from</th>
+        <th>to</th>
+
+    </tr>
+    <tr th:each="message : ${messages}">
+
+        <td th:text="${message.getId()}"></td>
+        <td th:text="${message.getText()}"></td>
+        <td th:text="${message.getFrom()}"></td>
+        <td th:text="${message.getTo()}"></td>
+
+        <td><a th:href="@{/deleteMessage(id=${message.getId()})}">Delete</a></td>
+
+
+    </tr>
+
+</table>
+
+
+</body>
+</html>
