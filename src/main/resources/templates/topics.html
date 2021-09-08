@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<H1>It is topics page</H1><br>
+
+<a href="/">Main page</a> <br>
+<a href="/addTopic">Add Topic</a><br><br>
+<a href="/logout">Logout</a><br>
+
+<h2>Topics</h2><br>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>text</th>
+        <th>added at</th>
+        <th>delete</th>
+    </tr>
+    <tr th:each="topic : ${topics}">
+
+        <td th:text="${topic.getId()}"></td>
+        <td th:text="${topic.getText()}"></td>
+        <td th:text="${topic.getCreatedDate()}"></td>
+
+       <td ><a th:href="@{/comments(id=${topic.getId()})}">comments</a></td>
+        <td><a th:href="@{/deleteTopic(id=${topic.getId()})}">Delete</a></td>
+
+
+    </tr>
+</table>
+</body>
+</html>

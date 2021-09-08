@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>comments</title>
+</head>
+<body>
+<h1>this is comments</h1>
+<h2>comments</h2><br>
+<a href="addComment">Add Comment</a>
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>added at</th>
+        <th>name surname</th>
+        <th>delete</th>
+
+
+    </tr>
+    <tr th:each="comment : ${comments}">
+
+        <td th:text="${comment.getName()}"></td>
+        <td th:text="${comment.getCreatedDate()}"></td>
+        <td th:text="${comment.getEmployee().getName()+ ' ' + comment.getEmployee().getSurname()}"></td>
+
+        <td><a th:href="@{/deleteMessage(id=${comment.getId()})}">Delete</a></td>
+
+
+    </tr>
+
+</table>
+<form action="/comments" method="post">
+
+    <input type="text" name="text" placeholder="text"><br>
+    <input type="hidden" th:value="${topic.getId()}" name="topic">
+    <input type="submit" value="Add">
+</form>
+
+
+
+
+
+</body>
+</html>
