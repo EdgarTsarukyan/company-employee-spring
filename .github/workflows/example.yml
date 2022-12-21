@@ -1,0 +1,19 @@
+name: My-GitHubActions_Basics
+
+on: 
+ push:
+  branches: 
+      -master
+
+jobs:
+ My_task: 
+  runs-on: ubuntu-latest
+  steps:
+    - name: print Hallo world
+      run: echo "Hello World"
+    
+ My_deploy: 
+  runs-on: ubuntu-latest
+  steps:
+    - name: print Hallo world
+      run: echo "Hello World"
