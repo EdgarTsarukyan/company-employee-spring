@@ -10,7 +10,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: print Hallo world
-      run: echo "Hello World"
+      run: echo "Hello Worl"
     
  My_deploy: 
   runs-on: ubuntu-latest
