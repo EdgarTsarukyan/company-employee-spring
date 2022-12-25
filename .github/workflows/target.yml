@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step 1 - chackout main brench from github
-        uses: actions/chackout@v2
+        uses: actions/chackout@v1
       - name: step 2 - Set uo JDK 1.8
         uses: actions/setup-java@v1
         with:
