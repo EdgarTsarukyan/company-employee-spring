@@ -12,8 +12,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-     # - name: step 3 - have github actions build maven project
-       
+      - name: step 3 - have github actions build maven project
+        run: mvn -B --file pom.xml
       
       - name: step 4 - list the current directory
         run: ls -a
