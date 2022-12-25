@@ -13,8 +13,8 @@ jobs:
         with:
           java-version: 11
       - name: step 3 - have github actions build maven project
-     # run: mvn -B package --file pom.xml
-      - run: mvn --batch-mode --update-snapshots verify
+        run: mvn -B package --file pom.xml
+      
       - name: step 4 - list the current directory
         run: ls -a
       - name: step 5 - what is the target folder
