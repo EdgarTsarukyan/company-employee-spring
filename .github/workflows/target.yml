@@ -12,8 +12,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-    #  - name: step 3 - have github actions build maven project
-     #   uses: qcastel/github-actions-maven/actions/maven@master
+      - name: step 3 - have github actions build maven project
+        uses: qcastel/github-actions-maven/actions/maven@master
     
       #- name: step 4 - list the current directory
        # run: ls -a
